@@ -84,7 +84,7 @@ module.exports = function(RED) {
 
 					const options = {
 						filter: mustache.render(node.filter,msg),
-						scope: 'sub'
+						scope: 'sub',
 						//attributes: []
 						scope: mustache.render(node.scope,msg) || 'sub',
 						attributes: mustache.render(node.attributes,msg) || 'memberOf'
