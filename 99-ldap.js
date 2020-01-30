@@ -46,6 +46,8 @@ module.exports = function(RED) {
 		this.base = config.base;
 		this.filter = config.filter;
 		this.topic = config.topic;
+		this.attributes=config.attributes;
+		this.scope=config.scope;
 		this.ldapServer = RED.nodes.getNode(this.server);
 		let credentials = RED.nodes.getCredentials(this.server);
 		let node = this;
@@ -84,6 +86,8 @@ module.exports = function(RED) {
 						filter: mustache.render(node.filter,msg),
 						scope: 'sub'
 						//attributes: []
+						scope: mustache.render(node.scope,msg) || 'sub',
+						attributes: mustache.render(node.attributes,msg) || 'memberOf'
 					};
 					node.ldap.search(node.base, options, function(err,res){
 
