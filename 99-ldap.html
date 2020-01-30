@@ -90,6 +90,15 @@
         <input type="text" id="node-input-filter" placeholder="Filter">
     </div>
     <div class="form-row">
+        <label for="node-input-scope"><i class="fa fa-tasks"></i> Scope</label>
+        <input type="text" id="node-input-scope" placeholder="Scope">
+    </div>
+    <div class="form-row">
+        <label for="node-input-attributes"><i class="fa fa-tasks"></i> Attributes</label>
+        <input type="text" id="node-input-attributes" placeholder="Attributes">
+    </div>
+
+    <div class="form-row">
         <label for="node-input-topic"><i class="fa fa-tasks"></i> Topic</label>
         <input type="text" id="node-input-topic" placeholder="Topic">
     </div>
@@ -113,8 +122,8 @@
             topic: {value:""},
             base: {value:""},
             filter: {value:""},
-            scope: {value:""},
             attributes: {value:""},
+            scope: {value:""},
             server: {type:"ldap", required:true}
         },
         color: "rgb(218, 196, 180)",
