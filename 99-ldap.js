@@ -87,7 +87,7 @@ module.exports = function(RED) {
 						//scope: 'sub',
 						scope: mustache.render(node.scope,msg),
 						//attributes: ['memberOf'] 
-						attributes: mustache.render(node.attributes,msg) 
+						attributes: mustache.render(node.attributes,msg).split(',')
 					};
 					node.ldap.search(node.base, options, function(err,res){
 
